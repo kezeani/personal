@@ -12,7 +12,7 @@ Those who want to predict the outcome of the most exciting event in sports and c
 
 ## Usage
 
-After unzipping the zip file, the website can be accessed by running flask in the VS Code Terminal
+After unzipping the zip file, the website can be accessed by running flask in the VS Code Terminal using the command 'flask run'.
 
 ### Register/Login
 
