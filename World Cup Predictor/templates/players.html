@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Players
+{% endblock %}
+
+{% block main %}
+<br>
+<br>
+<form action="/players" method="post">
+<div class="mb-3">
+    {% if name == "%" %}
+        <input autocomplete="off" size="30" class="form-control mx-auto w-auto" name="name" placeholder="Search Players" type="text">
+    {% else %}
+        <input autocomplete="off" size="30" class="form-control mx-auto w-auto" name="name" placeholder="Search Players" value="{{ plainname }}" type="text">
+    {% endif %}
+</div>
+<br>
+<div>
+    <div class="mb-3" style="display: inline-flex; margin-left: 400px;">
+        <select class="form-select mx-auto w-auto" name="nation">
+            {% if nation == "Any Nation" %}
+                <option selected>Any Nation</option>
+                {% for row in nations %}
+                    <option>{{ row.name }}</option>
+                {% endfor %}
+            {% else %}
+                <option selected>{{ nation }}</option>
+                <option disabled> Select Nation</option>
+                <option>Any Nation</option>
+                {% for row in nations %}
+                    <option>{{ row.name }}</option>
+                {% endfor %}
+            {% endif %}
+        </select>
+    </div>
+    <div class="mb-3" style="display: inline-flex; margin-left: 50px;">
+        <select class="form-select mx-auto w-auto" name="position">
+            {% if position == "Any Position" %}
+                <option selected>Any Position</option>
+                {% for row in positions %}
+                    <option>{{ row.position }}</option>
+                {% endfor %}
+            {% else %}
+                <option selected>{{ position }}</option>
+                <option disabled> Select Position</option>
+                <option>Any Position</option>
+                {% for row in positions %}
+                    <option>{{ row.position }}</option>
+                {% endfor %}
+            {% endif %}
+        </select>
+    </div>
+    <div class="mb-3" style="display: inline-flex; margin-left: 50px; width: 200px;">
+        <input autocomplete="off" class="form-control mx-auto w-auto" id="minage" name="minage" placeholder="Min. Age" type="number" value="{{ minage }}" min="0">
+    </div>
+    <div class="mb-3" style="display: inline-flex; margin-left: 50px;">
+        <input autocomplete="off" class="form-control mx-auto w-auto" id="maxage" name="maxage" placeholder="Max. Age" type="number" value="{{ maxage }}" min="0">
+    </div>
+</div>
+<button class="btn btn-primary" style="margin-left: 725px;" type="submit">Search</button>
+<br>
+<br>
+{% if stat == 0 %}
+<table class="playertable table table-dark table-striped table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Player</th>
+            <th scope="col">Nation</th>
+            <th scope="col">Position</th>
+            <th scope="col">Age</th>
+            {% if session["user_id"] %}
+                <th scope="col">Bookmark Player</th>
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in search %}
+            <tr>
+                <td><a href="{{ row.link }}" style="color: white;">{{ row.name }}</a></td>
+                <td>{{ row.nation }}</td>
+                <td>{{ row.position }}</td>
+                <td>{{ row.age }}</td>
+                {% if session["user_id"] %}
+                    <td>
+                            {% if row.id in list %}
+                                <button type="submit" id="bookmark" name="unbook" class="btn btn-success" value="{{ row.id }}">Bookmarked</button>
+                            {% else %}
+                                <button type="submit" id="bookmark" name="book" class="btn btn-warning" value="{{ row.id }}">Bookmark</button>
+                            {% endif %}
+                        </form>
+                    </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+<script>
+
+    function checkMark(event) {
+        let button = event.target;
+        if (button.innerHTML == "Bookmark")
+        {
+            button.style.backgroundColor = 'green';
+            button.style.borderColor = 'green';
+            button.innerHTML = 'Bookmarked';
+        }
+        else
+        {
+            button.style.backgroundColor = '';
+            button.style.borderColor = '';
+            button.innerHTML = 'Bookmark ';
+        }
+    }
+    </script>
+{% endblock %}

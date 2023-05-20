@@ -1,0 +1,214 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Predictor
+{% endblock %}
+{% block main %}
+<form action="/quarters" method="post">
+    <br>
+    <h3 style="color: white; text-align: center;">Round of 16</h3>
+    <br>
+    <div class="row">
+        <table class="table table-dark table-striped table-bordered">
+            <thead>
+                <tr class="table-light">
+                    <td colspan="4">Match 1</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="width: 50%;"><img src="{{ a1.image }}" alt="..." class="pics"><p>{{ a1.name }}</p></th>
+                    <th scope="row" style="width: 50%;"><img src="{{ b2.image }}" alt="..." class="pics"><p>{{ b2.name }}</p></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Who will advance to the quarterfinals?</td>
+                    <td>
+                        <select class="form-select mx-auto w-auto" name="1">
+                            <option disabled selected>Select</option>
+                            <option>{{ a1.name }}</option>
+                            <option>{{ b2.name }}</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-dark table-striped table-bordered">
+            <thead>
+                <tr class="table-light">
+                    <td colspan="4">Match 2</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="width: 50%;"><img src="{{ c1.image }}" alt="..." class="pics"><p>{{ c1.name }}</p></th>
+                    <th scope="row" style="width: 50%;"><img src="{{ d2.image }}" alt="..." class="pics"><p>{{ d2.name }}</p></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Who will advance to the quarterfinals?</td>
+                    <td>
+                        <select class="form-select mx-auto w-auto" name="2">
+                            <option disabled selected>Select</option>
+                            <option>{{ c1.name }}</option>
+                            <option>{{ d2.name }}</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <table class="table table-dark table-striped table-bordered">
+            <thead>
+                <tr class="table-light">
+                    <td colspan="4">Match 3</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="width: 50%;"><img src="{{ d1.image }}" alt="..." class="pics"><p>{{ d1.name }}</p></th>
+                    <th scope="row" style="width: 50%;"><img src="{{ c2.image }}" alt="..." class="pics"><p>{{ c2.name }}</p></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Who will advance to the quarterfinals?</td>
+                    <td>
+                        <select class="form-select mx-auto w-auto" name="3">
+                            <option disabled selected>Select</option>
+                            <option>{{ d1.name }}</option>
+                            <option>{{ c2.name }}</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-dark table-striped table-bordered">
+            <thead>
+                <tr class="table-light">
+                    <td colspan="4">Match 4</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="width: 50%;"><img src="{{ b1.image }}" alt="..." class="pics"><p>{{ b1.name }}</p></th>
+                    <th scope="row" style="width: 50%;"><img src="{{ a2.image }}" alt="..." class="pics"><p>{{ a2.name }}</p></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Who will advance to the quarterfinals?</td>
+                    <td>
+                        <select class="form-select mx-auto w-auto" name="4">
+                            <option disabled selected>Select</option>
+                            <option>{{ b1.name }}</option>
+                            <option>{{ a2.name }}</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <table class="table table-dark table-striped table-bordered">
+            <thead>
+                <tr class="table-light">
+                    <td colspan="4">Match 5</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="width: 50%;"><img src="{{ e1.image }}" alt="..." class="pics"><p>{{ e1.name }}</p></th>
+                    <th scope="row" style="width: 50%;"><img src="{{ f2.image }}" alt="..." class="pics"><p>{{ f2.name }}</p></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Who will advance to the quarterfinals?</td>
+                    <td>
+                        <select class="form-select mx-auto w-auto" name="5">
+                            <option disabled selected>Select</option>
+                            <option>{{ e1.name }}</option>
+                            <option>{{ f2.name }}</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-dark table-striped table-bordered">
+            <thead>
+                <tr class="table-light">
+                    <td colspan="4">Match 6</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="width: 50%;"><img src="{{ g1.image }}" alt="..." class="pics"><p>{{ g1.name }}</p></th>
+                    <th scope="row" style="width: 50%;"><img src="{{ h2.image }}" alt="..." class="pics"><p>{{ h2.name}}</p></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Who will advance to the quarterfinals?</td>
+                    <td>
+                        <select class="form-select mx-auto w-auto" name="6">
+                            <option disabled selected>Select</option>
+                            <option>{{ g1.name }}</option>
+                            <option>{{ h2.name}}</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <table class="table table-dark table-striped table-bordered">
+            <thead>
+                <tr class="table-light">
+                    <td colspan="4">Match 7</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="width: 50%;"><img src="{{ h1.image }}" alt="..." class="pics"><p>{{ h1.name }}</p></th>
+                    <th scope="row" style="width: 50%;"><img src="{{ g2.image }}" alt="..." class="pics"><p>{{ g2.name }}</p></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Who will advance to the quarterfinals?</td>
+                    <td>
+                        <select class="form-select mx-auto w-auto" name="7">
+                            <option disabled selected>Select</option>
+                            <option>{{ h1.name }}</option>
+                            <option>{{ g2.name }}</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-dark table-striped table-bordered">
+            <thead>
+                <tr class="table-light">
+                    <td colspan="4">Match 8</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="width: 50%;"><img src="{{ f1.image }}" alt="..." class="pics"><p>{{ f1.name }}</p></th>
+                    <th scope="row" style="width: 50%;"><img src="{{ e2.image }}" alt="..." class="pics"><p>{{ e2.name }}</p></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Who will advance to the quarterfinals?</td>
+                    <td>
+                        <select class="form-select mx-auto w-auto" name="8">
+                            <option disabled selected>Select</option>
+                            <option>{{ f1.name }}</option>
+                            <option>{{ e2.name }}</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <button class="btn btn-primary" style="margin-left: 712px;" type="submit">Advance</button>
+    <br>
+    <br>
+</form>
+{% endblock %}

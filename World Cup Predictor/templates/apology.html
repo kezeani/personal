@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- https://memegen.link/ -->
+    <img alt="{{ top }}" class="apology" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://static01.nyt.com/images/2018/07/11/sports/11soccerfail2/11soccerfail2-jumbo.jpg&width=400" title="{{ top }}">
+{% endblock %}

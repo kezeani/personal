@@ -1,0 +1,95 @@
+.header{
+    text-align: center;
+    font-family: roboto;
+}
+
+.container-fluid{
+    background-color: black;
+    margin-bottom: 0.1rem;
+    padding: 0.3rem 1rem;
+    width: 100%;
+}
+
+.navbar{
+    width: 100%;
+}
+
+.nav-link{
+    color: white;
+    width: 100%;
+}
+
+.main-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pics{
+    height: 80px;
+    width: 120px;
+}
+
+p {
+    text-align: center;
+}
+
+.table{
+    width: 40%;
+    text-align: center;
+    margin-left: 100px;
+
+}
+
+td{
+    font-size: 20px;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.card-body{
+    text-align: center;
+}
+
+.card-img-top{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card{
+    width: 30rem;
+    margin-left: 130px;
+}
+
+body{
+    background-color: maroon;
+}
+
+a{
+    font-size: 20px;
+}
+
+.col-md-6{
+    width: 50%;
+}
+
+th.row{
+    margin-right: auto;
+}
+
+.playertable{
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul.navbar-nav a:hover{
+    color: maroon !important;
+}
+
+.apology{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

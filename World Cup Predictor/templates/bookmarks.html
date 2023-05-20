@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bookmarks
+{% endblock %}
+
+{% block main %}
+<br>
+<br>
+<form action="/bookmarks" method="post">
+<table class="playertable table table-dark table-striped table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Player</th>
+            <th scope="col">Nation</th>
+            <th scope="col">Position</th>
+            <th scope="col">Age</th>
+            {% if session["user_id"] %}
+                <th scope="col">Bookmark</th>
+            {% endif %}
+        </tr>
+    </thead>
+    {% for row in bookmarks %}
+            <tr>
+                <td><a href="{{ row.link }}" style="color: white;">{{ row.name }}</a></td>
+                <td>{{ row.nation }}</td>
+                <td>{{ row.position }}</td>
+                <td>{{ row.age }}</td>
+                {% if session["user_id"] %}
+                    <td>
+                            {% if row.player_id in list %}
+                                <button type="submit" id="bookmark" name="unbook" class="btn btn-success" value="{{ row.player_id }}">Bookmarked</button>
+                            {% else %}
+                                <button type="submit" id="bookmark" name="book" class="btn btn-warning" value="{{ row.player_id }}">Bookmark</button>
+                            {% endif %}
+                        </form>
+                    </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</form>
+{% endblock %}

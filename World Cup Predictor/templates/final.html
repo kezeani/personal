@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Predictor
+{% endblock %}
+{% block main %}
+<form action="/winner" method="post">
+    <br>
+    <h3 style="color: white; text-align: center;">World Cup Final</h3>
+    <br>
+    <table style="margin-left: auto; margin-right: auto;" class="table table-dark table-striped table-bordered">
+        <thead>
+            <tr class="table-light">
+                <td colspan="4">Final</td>
+            </tr>
+            <tr>
+                <th scope="row" style="width: 50%;"><img src="{{ a.image }}" alt="..." class="pics"><p>{{ a.name }}</p></th>
+                <th scope="row" style="width: 50%;"><img src="{{ b.image }}" alt="..." class="pics"><p>{{ b.name }}</p></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Who will win the 2022 FIFA World Cup?</td>
+                <td>
+                    <select class="form-select mx-auto w-auto" name="1">
+                        <option disabled selected>Select</option>
+                        <option>{{ a.name }}</option>
+                        <option>{{ b.name }}</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <button class="btn btn-primary" style="margin-left: 725px;" type="submit">Advance</button>
+    <br>
+    <br>
+</form>
+{% endblock %}

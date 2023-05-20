@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Predictor
+{% endblock %}
+{% block main %}
+<form action="/final" method="post">
+    <br>
+    <h3 style="color: white; text-align: center;">Semi Finals</h3>
+    <br>
+    <div class="row">
+        <table class="table table-dark table-striped table-bordered">
+            <thead>
+                <tr class="table-light">
+                    <td colspan="4">Match 1</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="width: 50%;"><img src="{{ a.image }}" alt="..." class="pics"><p>{{ a.name }}</p></th>
+                    <th scope="row" style="width: 50%;"><img src="{{ b.image }}" alt="..." class="pics"><p>{{ b.name }}</p></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Who will advance to the World Cup Final?</td>
+                    <td>
+                        <select class="form-select mx-auto w-auto" name="1">
+                            <option disabled selected>Select</option>
+                            <option>{{ a.name }}</option>
+                            <option>{{ b.name }}</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-dark table-striped table-bordered">
+            <thead>
+                <tr class="table-light">
+                    <td colspan="4">Match 3</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="width: 50%;"><img src="{{ c.image }}" alt="..." class="pics"><p>{{ c.name }}</p></th>
+                    <th scope="row" style="width: 50%;"><img src="{{ d.image }}" alt="..." class="pics"><p>{{ d.name }}</p></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Who will advance to the World Cup Final?</td>
+                    <td>
+                        <select class="form-select mx-auto w-auto" name="2">
+                            <option disabled selected>Select</option>
+                            <option>{{ c.name }}</option>
+                            <option>{{ d.name }}</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <button class="btn btn-primary" style="margin-left: 712px;" type="submit">Advance</button>
+    <br>
+    <br>
+</form>
+{% endblock %}

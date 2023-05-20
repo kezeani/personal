@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Predictor
+{% endblock %}
+{% block main %}
+    <br>
+    <br>
+    <form action="/winner" method="post">
+    <table style="margin-left: auto; margin-right: auto;" class="table table-dark table-striped table-bordered">
+        <thead>
+            <tr class="table-light">
+                <td colspan="4">Your Winner</td>
+            </tr>
+            <tr>
+                <th scope="row" style="width: 50%;"><img src="{{ a.image }}" alt="..." class="pics"><p>{{ a.name }}</p></th>
+            </tr>
+        </thead>
+    </table>
+    <br>
+    <br>
+    <h3 style="color: white; text-align: center;">{{ a.name }}'s Players</h3>
+    <br>
+    <br>
+    <table class="playertable table table-dark table-striped table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Player</th>
+                <th scope="col">Nation</th>
+                <th scope="col">Position</th>
+                <th scope="col">Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in players %}
+                <tr>
+                    <td><a href="{{ row.link }}" style="color: white;">{{ row.name }}</a></td>
+                    <td>{{ row.nation }}</td>
+                    <td>{{ row.position }}</td>
+                    <td>{{ row.age }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</form>
+{% endblock %}

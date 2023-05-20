@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+    <br>
+    <body>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card">
+            <img src="static/engsquad.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Teams</h5>
+              <p class="card-text">Learn about the teams participating in the 2022 FIFA World Cup.</p>
+              <a href="/teams" class="btn btn-warning">Teams</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="static/messi.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Players</h5>
+              <p class="card-text">Look at all 831 players participating in the 2022 FIFA World Cup.</p>
+              <a href="/players" class="btn btn-warning">Players</a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="col">
+          <div class="card" style="margin-left: 500px;">
+            <img src="static/trophy.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">World Cup Predictor Game</h5>
+              <p class="card-text">Predict which nation will take home the World Cup trophy.</p>
+              <a href="/group" class="btn btn-warning">Let's Play</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+    </body>
+    {% endblock %}
+</html>
