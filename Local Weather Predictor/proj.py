@@ -49,8 +49,4 @@ def create_predictions (dfcore, predictors, reg):
     combined.columns = ["actual", "predictions"]
     return error, combined
 
-e, c = create_predictions(dfcore, predictors, reg)
-
-print(e)
-
 
